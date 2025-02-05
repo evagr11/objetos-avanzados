@@ -1,3 +1,4 @@
+/*
 const usuario = {
     nombre: 'Juan',
     edad: 25,
@@ -16,22 +17,29 @@ const usuario = {
         console.log('¡Encantado de conocerte!');
     }
 }
-/*
-*/
 console.log(usuario);
-/**
- console.log(usuario.nombre);
- console.log(usuario['nombre']);
+console.log(usuario.direccion);
+console.log(usuario['direccion']);
+console.log(Object.keys(usuario))
 
 for (let i=0; i<Object.keys(usuario).length; i++) {
-    console.log(Object.keys(usuario)[i], Object.values(usuario)[i]);
-    }
+    console.log(Object.keys(usuario)[i]);
+    console.log(Object.values(usuario)[i])
+}
     
 for (let clave in usuario) {
     console.log(clave, usuario[clave]);
 }
 
+usuario.nombre = 'Eva';
+usuario.edad++;
 usuario.saludo();
+*/
+
+
+
+
+
 
 class Usuario {
     constructor(nombre, edad, direccion, lenguajes, genero) {
@@ -53,7 +61,7 @@ class Usuario {
     cumplirAnios() {
         this.edad++;
     }
-    
+
     cambiarNombre(nuevoNombre) {
         this.nombre = nuevoNombre;
     }
@@ -61,7 +69,7 @@ class Usuario {
     cambiarDireccion(nuevaDireccion) {
         this.direccion = nuevaDireccion;
     }
-    
+
     aprenderLenguaje(nuevoLenguaje) {
         this.lenguajes.push(nuevoLenguaje);
     }
@@ -74,4 +82,9 @@ class Usuario {
         this.genero = nuevoGenero;
     }
 }
+
+const usuario = new Usuario('Eva', '18', {ciudad: 'Badajoz', pais: 'España'}, ['JavaScript', 'Python', 'Java', 'bash', 'Lua', ], 'F')
+usuario.olvidarLenguaje('Lua')
+usuario.saludo();
+/**
 **/
